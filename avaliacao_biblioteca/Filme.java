@@ -13,9 +13,6 @@ public class Filme extends Midia {
   }
 
 // Criar método get
-  public static ArrayList<Filme> getFilmes() {
-    return filmes;
-  }
   public String getTitulo() {
     return this.titulo;
   }
@@ -24,6 +21,9 @@ public class Filme extends Midia {
   }
   public boolean getDisponivel() {
     return this.disponivel;
+  }
+  public static ArrayList<Filme> getFilmes() {
+    return filmes;
   }
 
   // Criar método set 
@@ -49,18 +49,19 @@ public class Filme extends Midia {
     }
   }
 
+  // Emprestar Filme
   public void emprestarF() throws Exception {
     if (!this.disponivel) {
       throw new Exception("Lamento, filme indisponível!");
     }
     this.disponivel = false;
     System.out.println("\u001B[32m" + "\nFilme emprestado com sucesso!" + "\u001B[00m");
-}
+  }
 
   // Método devolver filme
   public void devolverF() {
     if (this.disponivel) {
-      System.out.println("Filme já está disponivel pra deveolução.");
+      System.out.println("Filme já foi devolvido.");
     }
     this.disponivel = true;
     System.out.println("\u001B[32m" + "\nFilme devolvido com sucesso!" + "\u001B[00m");

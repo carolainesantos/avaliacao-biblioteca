@@ -12,6 +12,9 @@ public class Biblioteca {
   private String nome;
   private ArrayList<Livro> livros;
   private ArrayList<Filme> filmes = new ArrayList<>();
+  protected static ArrayList<Album> albums = new ArrayList<>();
+  protected static ArrayList<AudioBook> audioBooks = new ArrayList<>();
+
   // Criar lista bibliotecas
   private static ArrayList<Biblioteca> bibliotecas = new ArrayList<>();
 
@@ -19,9 +22,9 @@ public class Biblioteca {
   public Biblioteca(String nome) {
     this.nome = nome;
     this.livros = new ArrayList<>();
-
     bibliotecas.add(this); // adiciona biblioteca
   }
+  
   // Criar método get
   public String getNome() {
     return this.nome;
@@ -31,6 +34,12 @@ public class Biblioteca {
   }
   public ArrayList<Filme> getFilmes(){
     return this.filmes;
+  }
+  public ArrayList<Album> getAlbums() {
+    return albums;
+  }
+  public ArrayList<AudioBook> getAudioBooks() {
+    return audioBooks;
   }
   public static ArrayList<Biblioteca> getBibliotecas() {
     return bibliotecas;
@@ -46,13 +55,19 @@ public class Biblioteca {
   public void setFilmes(Filme filme) {
     filmes.add(filme);
   }
+  public void setAlbums(Album album) {
+    albums.add(album);
+  }
+  public void setAudioBooks(AudioBook audioBook) {
+    audioBooks.add(audioBook);
+  }
   public void setBibliotecas(Biblioteca biblioteca) {
     bibliotecas.add(biblioteca);
   }
 
   // Criar metodo toString
   public String toString() {
-    return "Nome: " + this.nome;
+    return this.nome;
   }
 
   // Mostrar todos os livros
