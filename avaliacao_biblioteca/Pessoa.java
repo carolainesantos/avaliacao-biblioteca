@@ -4,7 +4,7 @@ public class Pessoa {
   protected String nome;
   protected int idade;
   
-  // Bob :) o construtor 
+  // Construtor 
   public Pessoa(String nome, int idade) {
     this.nome = nome;
     this.idade = idade; 
