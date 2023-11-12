@@ -19,7 +19,7 @@ public class Catalogar {
         System.out.println("+-------------------------------------------------------------+");
         System.out.println("|                 Gerenciamento de Biblioteca                 |");
         System.out.println("|                                                             |");
-        System.out.println("|   [0] - Encerrar  Programa    |  [9] - Add Album            |");
+        System.out.println("|   [0] - Encerrar  Programa    |  [9]  - Add Album           |");
         System.out.println("|   [1] - Registrar Autor       |  [10] - Add AudioBook       |");
         System.out.println("|   [2] - Registrar Livro       |  [11] - Emprestar Livro     |");
         System.out.println("|   [3] - Registrar Filme       |  [12] - Emprestar Filme     |");

@@ -8,7 +8,7 @@ package avaliacao_biblioteca;
 
 import java.util.ArrayList;
 
-public class Autor extends Pessoa {
+  public class Autor extends Pessoa {
   private static ArrayList<Autor> autores = new ArrayList<>();
 
   // Consrtutor
@@ -35,6 +35,6 @@ public class Autor extends Pessoa {
 
   // Método toString
   public String toString() {
-    return "Nome Completo: " + nome; 
+    return nome; 
   }
 }
