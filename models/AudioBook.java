@@ -4,14 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 import banco_conect.ConexaoBanco;
 
 public class AudioBook extends MidiaDigital {
   private int id;
   protected String narrador;
-  protected static ArrayList<AudioBook> audioBooks = new ArrayList<>();
 
   // construtor 
   public AudioBook() {}
@@ -71,9 +69,6 @@ public class AudioBook extends MidiaDigital {
   public String getNarrador() {
     return this.narrador;
   }
-  public static ArrayList<AudioBook> getAudioBooks() {
-    return audioBooks;
-  }
 
   // metodo set 
   public void setIdAudioBook(int idAudioBook) {
@@ -90,9 +85,6 @@ public class AudioBook extends MidiaDigital {
   }
   public void setNarrador(String narrador) {
     this.narrador = narrador;
-  }
-  public void setAudioBooks(AudioBook audioBook) {
-    audioBooks.add(audioBook);
   }
 //==========================================================================================================//
 

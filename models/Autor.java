@@ -1,12 +1,4 @@
 package models;
-/*  Autor:
-  Esta classe deve representar um autor 
-  de livros e deve conter um atributo nome. 
-  Ela deve ter um construtor para inicializar 
-  o nome do autor e um método toString para 
-  representar a classe como uma string. */
-
-import java.util.ArrayList;
 
 import banco_conect.ConexaoBanco;
 
@@ -17,7 +9,6 @@ import java.sql.SQLException;
 
   public class Autor extends Pessoa {
     private int id;    
-    private static ArrayList<Autor> autores = new ArrayList<>();
 
   // Consrtutor
   public Autor() {};
@@ -47,9 +38,6 @@ import java.sql.SQLException;
   public void setNome(String nome, int idade) {
     this.nome = nome;
     this.idade = idade;
-  }
-  public void setAutores(Autor autor) {
-    autores.add(autor);
   }
 
   // Criar método get 

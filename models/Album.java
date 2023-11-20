@@ -4,14 +4,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
+
 
 import banco_conect.ConexaoBanco;
 
 public class Album extends MidiaDigital {
   private int id;
   protected int qtdFaixa;
-  protected static ArrayList<Album> albums = new ArrayList<>();
 
   // Construtor
   public Album() {}
@@ -89,9 +88,7 @@ public class Album extends MidiaDigital {
   public int getQtdFaixa() {
     return this.qtdFaixa;
   }
-  public static ArrayList<Album> getAlbums() {
-    return albums;
-  }
+  
 
   // Mostrar Albums
   public static void mostrarAlbums() {

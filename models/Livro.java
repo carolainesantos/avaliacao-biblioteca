@@ -1,18 +1,9 @@
 package models;
-/*  Livro: 
-  Esta classe deve representar um livro na biblioteca 
-  e deve conter atributos como titulo, autor e disponivel. 
-  Ela deve ter um construtor para inicializar o título e 
-  o autor do livro, bem como métodos para emprestar e devolver 
-  um livro, alterando o estado de disponibilidade. 
-  Também deve conter um método toString para representar 
-  a classe como uma string. */
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 import banco_conect.ConexaoBanco;
 public class Livro {
@@ -20,7 +11,6 @@ public class Livro {
   private String titulo;
   private Autor autor;
   private boolean disponivel;
-  private static ArrayList<Livro> livros = new ArrayList<>();
 
   // Construtor
   public Livro() {}
@@ -81,9 +71,7 @@ public class Livro {
   public boolean getDisponivel() {
     return this.disponivel;
   }
-  public static ArrayList<Livro> getLivros() {
-    return livros;
-  }
+  
 //====================================================\\
 
     // Criar método Set 
@@ -99,9 +87,7 @@ public class Livro {
   public void setDisponivel(boolean disponivel) {
     this.disponivel = disponivel;
   }
-  public static void setLivros(Livro livro) {
-    livros.add(livro);
-  }
+  
 
   // Mostrar Livros 
   public static void mostrarLivros() {
