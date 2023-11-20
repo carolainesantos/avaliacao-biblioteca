@@ -1,4 +1,4 @@
-package avaliacao_biblioteca;
+package models;
 import java.util.ArrayList;
 
 public class MidiaDigital {
@@ -8,6 +8,7 @@ public class MidiaDigital {
   protected static ArrayList<MidiaDigital> midiaDigitais = new ArrayList<>();
 
   // construtor 
+  public MidiaDigital() {}
   public MidiaDigital(String titulo, String dtLacamento, Boolean disponivel) {
     this.titulo = titulo;
     this.dtLancamento = dtLacamento;

@@ -1,10 +1,11 @@
-package avaliacao_biblioteca;
+package models;
 
 public class Pessoa {
   protected String nome;
   protected int idade;
   
   // Construtor 
+  public Pessoa() {}
   public Pessoa(String nome, int idade) {
     this.nome = nome;
     this.idade = idade; 

@@ -1,4 +1,4 @@
-package avaliacao_biblioteca;
+package models;
 
 import java.util.ArrayList;
 
@@ -8,6 +8,7 @@ public class Midia {
   protected static ArrayList<Midia> midias = new ArrayList<>();
   
   // Criar método construtor
+  public Midia() {}
   public Midia(String titulo, String genero, boolean disponivel) {
     this.titulo = titulo;  
     this.disponivel = disponivel;
