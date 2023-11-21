@@ -100,7 +100,7 @@ public class Filme extends Midia {
       PreparedStatement ps = conexao.prepareStatement("SELECT * FROM filme");
       ResultSet resultado = ps.executeQuery();
       while (resultado.next()) {
-        System.out.println("\nID: " + resultado.getInt("id_filme") + " - " + "\nTitulo: " + resultado.getString("titulo") + " - " + "\nGenero: " + resultado.getString("genero")  + " - " + "\nDisponibilidade: " + resultado.getBoolean("disponivel"));
+        System.out.println("\nID: " + resultado.getInt("id_filme") + "\nTitulo: " + resultado.getString("titulo") + "\nGenero: " + resultado.getString("genero") + "\nDisponibilidade: " + resultado.getBoolean("disponivel"));
       }
       conexao.close();
     } catch (SQLException exception) {

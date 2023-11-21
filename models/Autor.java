@@ -31,6 +31,20 @@ import java.sql.SQLException;
     }
   }
 
+  public static void mostrarAutores() {
+    try{
+      Connection conexao = ConexaoBanco.conectar();
+      PreparedStatement ps = conexao.prepareStatement("SELECT * FROM autor");
+      ResultSet resultado = ps.executeQuery();
+      while (resultado.next()) {
+        System.out.println("\nID: " + resultado.getInt("id_autor") + "\nNome: " + resultado.getString("nome") + "\nIdade: " + resultado.getInt("idade"));
+      }
+      conexao.close();
+    } catch (SQLException exception) {
+      throw new Error(exception.getMessage());
+    }
+  }
+
   // Criar método set 
   public void setIdAutor(int idAutor) {
     this.id = idAutor;

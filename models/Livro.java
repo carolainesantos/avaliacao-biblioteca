@@ -18,7 +18,6 @@ public class Livro {
     this.titulo = titulo;
     this.autor = autor;
     this.disponivel = disponivel;
-    // Adiciona livros 
     criarNoBanco(this);
   }
 

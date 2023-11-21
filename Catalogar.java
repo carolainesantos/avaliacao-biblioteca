@@ -1,5 +1,3 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Scanner;
 
@@ -19,22 +17,22 @@ public class Catalogar {
 
     do {
       System.out.println("\n" + "\u001B[35m");
-      System.out.println("+----------------------------------------------------------------+");
-      System.out.println("|                 Gerenciamento de Biblioteca                    |");
-      System.out.println("|                                                                |");
-      System.out.println("|   [0] - Encerrar  Programa      | [11] - Emprestar Livro       |");
-      System.out.println("|   [1] - Registrar Autor         | [12] - Emprestar Filme       |");
-      System.out.println("|   [2] - Registrar Livro         | [13] - Emprestar Album       |");
-      System.out.println("|   [3] - Registrar Filme         | [14] - Comprar AudioBook     |");
-      System.out.println("|   [4] - Registrar Album         | [15] - Devolver  Livro       |"); 
-      System.out.println("|   [5] - Registrar AudioBook     | [16] - Devolver  Filme       |");
-      System.out.println("|   [6] - Registrar Biblioteca    | [17] - Devolver  Album       |");
-      System.out.println("|   [7] - Add Livro               | [18] - Listar  Livro         |"); 
-      System.out.println("|   [8] - Add Filme               | [19] - Listar  Filme         |");
-      System.out.println("|   [9] - Add Album               | [20] - Listar  Album         |");
-      System.out.println("|   [10] - Add AudioBook          | [21] - Listar  AudioBook     |");
-      System.out.println("|                                 | [22] - Listar  Biblioteca    |");
-      System.out.println("+----------------------------------------------------------------+");
+      System.out.println("+------------------------------------------------------------------+");
+      System.out.println("|                 Gerenciamento de Biblioteca                      |");
+      System.out.println("|                                                                  |");
+      System.out.println("|   [0] - Encerrar  Programa      |   [12] - Emprestar Filme       |");
+      System.out.println("|   [1] - Registrar Autor         |   [13] - Emprestar Album       |");
+      System.out.println("|   [2] - Registrar Livro         |   [14] - Comprar AudioBook     |");
+      System.out.println("|   [3] - Registrar Filme         |   [15] - Devolver  Livro       |");
+      System.out.println("|   [4] - Registrar Album         |   [16] - Devolver  Filme       |"); 
+      System.out.println("|   [5] - Registrar AudioBook     |   [17] - Devolver  Albumm      |");
+      System.out.println("|   [6] - Registrar Biblioteca    |   [18] - Listar  Livro         |");
+      System.out.println("|   [7] - Add Livro               |   [19] - Listar  Filme         |"); 
+      System.out.println("|   [8] - Add Filme               |   [20] - Listar  Album         |");
+      System.out.println("|   [9] - Add Album               |   [21] - Listar  AudioBook     |");
+      System.out.println("|  [10] - Add AudioBook           |   [22] - Listar  Biblioteca    |");
+      System.out.println("|  [11] - Emprestar Livro         |   [23] - Listar  Autor         |");
+      System.out.println("+------------------------------------------------------------------+");
       System.out.println("\nEscolha uma opção: \n" + "\u001B[00m");
 
       try {
@@ -154,15 +152,9 @@ public class Catalogar {
 
               System.out.println("\nDigite o título do Album: ");
               String titulo = sc.next();
-              if (titulo.length() <= 1) { 
-                throw new Exception("\nO titulo do Album não é válido!");
-              }
-                // ToDo converter a data dd/mm/aaaa ?? 
-              System.out.println("\nQual a data de lançamento do album? ");
+            
+              System.out.println("\nQual a data de lançamento do album?");
               String dtLancamento = sc.next();
-              if (dtLancamento.length() <=1) {
-                throw new Exception("\n Data incorreta");
-              }
 
               System.out.println("\nQual a quantidade de faixas? ");
               int qtdFaixa = sc.nextInt();
@@ -198,15 +190,9 @@ public class Catalogar {
 
               System.out.println("\nDigite o título do AudioBook: ");
               String titulo = sc.next();
-              if (titulo.length() <= 1) { 
-                throw new Exception("\nO titulo do AudioBook não é válido!");
-              }
 
               System.out.println("\nQual a data de lançamento? ");
               String dtLancamento = sc.next();
-              if (dtLancamento.length() <=1) {
-                throw new Exception("\nData incorreta");
-              }
 
               System.out.println("\nNome do narrador? ");
               String narrador = sc.next();
@@ -223,7 +209,7 @@ public class Catalogar {
               }
 
               temErro = false;
-              new AudioBook(titulo, dtLancamento, aux, narrador); // Criar um novo AudioBook
+              new AudioBook(titulo, dtLancamento, aux, narrador); 
 
               System.out.println("\n\u001B[36mAudioBook cadastrado com sucesso! \u001B[00m");
               System.out.println("Nome do AudioBook: " + "\u001B[32m" + titulo + "\u001B[00m");
@@ -241,9 +227,9 @@ public class Catalogar {
               System.out.println("\n\t \u001B[36m  Registrando Bibliotecas ... \u001B[00m \n");
               System.out.println("\nDigite o nome da biblioteca: ");
               String nome = sc.next();
-                if (nome.length() <= 1) { // Verificar se digitou o nome correto 
-                throw new Exception("\nO nome não é válido");
-              }
+              //   if (nome.length() <= 1) { // Verificar se digitou o nome correto 
+              //   throw new Exception("\nO nome não é válido");
+              // }
               new Biblioteca(nome);
 
               System.out.println("\n\u001B[36mBiblioteca cadastrada com sucesso! \u001B[00m");
@@ -488,39 +474,45 @@ public class Catalogar {
             break;
         }
         case 18: {
-        do {
-          System.out.println("\n\t Visualizar Livro(s)\n");
+          do {
+            System.out.println("\n\t \u001B[36m Visualizar Livro(s) \u001B[00m \n");
+            Livro.mostrarLivros();
 
-          Livro.mostrarLivros();
-
-        } while(temErro);
-        break;
-      }
+          } while(temErro);
+          break;
+        }
         case 19: {
           do {
-              System.out.println("\n\t Visualizar Filme(s)\n");
+              System.out.println("\n\t \u001B[36m Visualizar Filme(s) \u001B[00m \n");
               Filme.mostrarFilmes();
           } while(temErro);
           break;
         }
         case 20: {
           do {
-              System.out.println("\n\t Visualizar Album(s)\n");
+              System.out.println("\n\t \u001B[36m Visualizar Album(s)\u001B[00m \n");
               Album.mostrarAlbums();
           } while(temErro);
           break;
         }
         case 21: {
           do {
-              System.out.println("\n\t Visualizar AudioBook(s)\n");
+              System.out.println("\n\t \u001B[36m Visualizar AudioBook(s)\u001B[00m \n");
               AudioBook.mostrarAudioBooks();
           } while(temErro);
           break;
         }
         case 22: {
           do {
-              System.out.println("\n\t Visualizar AudioBook(s)\n");
+              System.out.println("\n\t \u001B[36m Visualizar Biblioteca(s)\u001B[00m \n");
               Biblioteca.mostrarBibliotecas();
+          } while(temErro);
+          break;
+        }
+        case 23: {
+          do {
+              System.out.println("\n\t \u001B[36m Visualizar Autor(s)\u001B[00m \n");
+              Autor.mostrarAutores();
           } while(temErro);
           break;
         }
