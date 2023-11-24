@@ -38,7 +38,7 @@ public class Catalogar {
       try {
         opcao = sc.nextInt();
       } catch (Exception e) {
-        opcao = 18;
+        opcao = 24;
       }
 
       switch (opcao) {
