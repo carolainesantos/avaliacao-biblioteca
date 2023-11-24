@@ -219,7 +219,7 @@ public class Catalogar {
               temErro = true;
             }
           } while(temErro);
-          break; 
+        break; 
       }
         case 6: {
           do {
